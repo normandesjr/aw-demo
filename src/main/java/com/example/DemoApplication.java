@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @EnableAutoConfiguration
+@SpringBootApplication
 public class DemoApplication {
 
     @RequestMapping("/")
