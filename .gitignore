@@ -1,6 +1,6 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
-/secret-env-plain
+secret-file-plain
 
 ### STS ###
 .classpath
