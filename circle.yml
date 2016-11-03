@@ -6,5 +6,14 @@ dependencies:
     - openssl aes-256-cbc -d -in secret-env-cipher -k $KEY >> ~/.circlerc
 
 test:
-  override:
-    - "echo FOO: $FOO BAR: $BAR"
+  post:
+    - cf api https://api.run.pivotal.io
+    - cf auth $PWS_USER $PWS_PASSWORD
+    - cf target -o $PWS_USER -s development
+    - cf a
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - cf push
