@@ -6,6 +6,9 @@ dependencies:
     - openssl aes-256-cbc -d -in secret-env-cipher -k $KEY >> ~/.circlerc
 
 test:
+  override:
+      - "echo FOO: $PWS_USER BAR: $PWS_PASSWORD"
+
   post:
     - cf api https://api.run.pivotal.io
     - cf auth $PWS_USER $PWS_PASSWORD
