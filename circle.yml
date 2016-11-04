@@ -16,4 +16,4 @@ deployment:
   production:
     branch: master
     commands:
-      - cf push aw-demo
+      - cf push aw-demo -p target/demo-0.0.2-SNAPSHOT.jar
