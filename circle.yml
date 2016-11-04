@@ -16,4 +16,4 @@ deployment:
   production:
     branch: master
     commands:
-      - cf push demo
+      - cf push aw-demo
